@@ -3,10 +3,12 @@ import { View, Text } from "react-native";
 import AddPost from "../Components/AddPost/AddPost";
 import { colors } from "../utils/colors";
 import { StyleSheet } from "react-native";
+import Header from "../Components/NewsFeed/Header";
 
 const CreatePostScreen = () => {
   return (
     <View style={styles.createPostScreen}>
+      <Header />
       <AddPost />
     </View>
   );

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
-import NewsFeedCard from "../Components/NewsFeedCard";
+import NewsFeedCard from "../Components/NewsFeed/NewsFeedCard";
 import { sharedData } from "../utils/SharedData";
 import { colors } from "../utils/colors";
 import { NewsFeedContext } from "../utils/AppContext";
+import Header from "../Components/NewsFeed/Header";
 
 const NewsFeedScreen = () => {
   const [newsFeed, setNewsFeed] = useState(sharedData);
   return (
     <NewsFeedContext.Provider value={{ newsFeed, setNewsFeed }}>
+      <Header />
       <FlatList
         style={styles.flatlist}
         data={newsFeed}

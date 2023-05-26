@@ -3,7 +3,7 @@ import StoreHeader from "../Components/Store/StoreHeader";
 import { colors } from "../utils/colors";
 import CustomButton from "../Components/Button";
 import { faJetFighter, faLocationPin } from "@fortawesome/free-solid-svg-icons";
-import ProductList from "../Components/ProductList";
+import ProductList from "../Components/MarketPlace/ProductList";
 
 const StoreScreen = ({ route }) => {
   const { profileData } = route.params;

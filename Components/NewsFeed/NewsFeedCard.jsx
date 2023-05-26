@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import UserInformation from "../Components/UserInformation";
-import MediaComponent from "../Components/MediaComponent";
-import CustomButton from "../Components/Button";
+import UserInformation from "./UserInformation";
+import MediaComponent from "./MediaComponent";
+import CustomButton from "../Button";
 import {
   faBookmark as faBookmarkFilled,
   faHeart as faHeartFiled,
@@ -13,9 +13,9 @@ import {
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import BottomSheet from "../Components/BottomSheet";
-import { NewsFeedContext } from "../utils/AppContext";
-import { colors } from "../utils/colors";
+import BottomSheet from "./BottomSheet";
+import { NewsFeedContext } from "../../utils/AppContext";
+import { colors } from "../../utils/colors";
 
 const styles = StyleSheet.create({
   newsFeed: {

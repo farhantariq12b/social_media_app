@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { colors } from "../utils/colors";
+import { colors } from "../../utils/colors";
 
 const UserInformation = ({ profilePicture, username, onThreeDotsClick }) => {
   return (

@@ -22,10 +22,14 @@ import StoreScreen from "./StoreScreen";
 import ProductDetails from "./ProductDetails";
 import { colors } from "../utils/colors";
 
+// Creating a bottom tab navigator using createBottomTabNavigator from @react-navigation/bottom-tabs
 const Tab = createBottomTabNavigator();
+
+// Creating stack navigators using createStackNavigator from @react-navigation/stack
 const MarketPlaceStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 
+// StyleSheet for styling
 const styles = StyleSheet.create({
   tabNavigator: {
     backgroundColor: "#FFFFFF",
@@ -43,9 +47,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// Component for the bottom tab navigation
 const BottomTabs = () => {
   return (
     <NavigationContainer>
+      {/* Setting up the bottom tab navigator */}
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarActiveTintColor: "#ffffff",
@@ -59,6 +65,7 @@ const BottomTabs = () => {
           tabBarIcon: ({ color, focused }) => {
             let icon;
 
+            // Setting the appropriate icon based on the route name
             if (route.name === "NewsFeed") {
               icon = faHouse;
             } else if (route.name === "CreatePost") {
@@ -77,6 +84,7 @@ const BottomTabs = () => {
           },
         })}
       >
+        {/* Setting up the screens for the bottom tab navigator */}
         <Tab.Screen name="NewsFeed" component={NewsFeedScreen} />
         <Tab.Screen
           options={{ headerShown: false }}
@@ -90,8 +98,11 @@ const BottomTabs = () => {
   );
 };
 
+// Component for the Marketplace stack screen
 function MarketPlaceStackScreen({ navigation, route }) {
   const tabHiddenRoutes = ["ProductDetails", "Store", "UserDetails"];
+
+  // useEffect hook to set navigation options based on the current route
   useLayoutEffect(() => {
     if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route))) {
       navigation.setOptions({ tabBarStyle: { display: "none" } });
@@ -105,7 +116,6 @@ function MarketPlaceStackScreen({ navigation, route }) {
   return (
     <MarketPlaceStack.Navigator
       screenOptions={() => ({
-        headerShown: false,
         headerShadowVisible: false,
         headerBackImage: () => (
           <FontAwesomeIcon
@@ -122,7 +132,11 @@ function MarketPlaceStackScreen({ navigation, route }) {
         },
       })}
     >
-      <MarketPlaceStack.Screen name="Shop" component={MarketplaceScreen} />
+      <MarketPlaceStack.Screen
+        name="Shop"
+        component={MarketplaceScreen}
+        options={() => ({ headerShown: false })}
+      />
       <MarketPlaceStack.Screen name="Store" component={StoreScreen} />
       <MarketPlaceStack.Screen
         name="UserDetails"
@@ -136,8 +150,11 @@ function MarketPlaceStackScreen({ navigation, route }) {
   );
 }
 
+// Component for the Profile stack screen
 function ProfileStackScreen({ navigation, route }) {
   const tabHiddenRoutes = ["Product, YourStore"];
+
+  // useEffect hook to set navigation options based on the current route
   useLayoutEffect(() => {
     if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route))) {
       navigation.setOptions({ tabBarStyle: { display: "none" } });
@@ -151,6 +168,7 @@ function ProfileStackScreen({ navigation, route }) {
   return <ProfileScreenStackScreen />;
 }
 
+// Component for the Profile stack screen used within the Marketplace stack screen
 export function ProfileScreenStackScreen() {
   return (
     <ProfileStack.Navigator

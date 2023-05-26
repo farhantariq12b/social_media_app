@@ -10,10 +10,10 @@ import {
 import { FlatList } from "react-native-gesture-handler";
 import Modal from "react-native-modal";
 import ShowComment from "./Comment";
-import Button from "./Button";
+import Button from "../Button";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
-import { NewsFeedContext } from "../utils/AppContext";
-import { colors } from "../utils/colors";
+import { NewsFeedContext } from "../../utils/AppContext";
+import { colors } from "../../utils/colors";
 
 const BottomSheet = ({
   isModalVisible,

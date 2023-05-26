@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, FlatList } from "react-native";
-import MarketPlace from "../Components/MarketPlace";
+import MarketPlace from "../Components/MarketPlace/MarketPlace";
 import { colors } from "../utils/colors";
 import { UsersData } from "../utils/UsersData";
+import Header from "../Components/NewsFeed/Header";
 
 const MarketplaceScreen = () => {
   const [productList, setProductList] = useState(UsersData);
@@ -13,6 +14,7 @@ const MarketplaceScreen = () => {
         flex: 1,
       }}
     >
+      <Header />
       <FlatList
         style={{
           backgroundColor: `${colors.primary}`,
