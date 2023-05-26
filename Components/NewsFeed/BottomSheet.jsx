@@ -13,7 +13,7 @@ import ShowComment from "./Comment";
 import Button from "../Button";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { NewsFeedContext } from "../../utils/AppContext";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const BottomSheet = ({
   isModalVisible,

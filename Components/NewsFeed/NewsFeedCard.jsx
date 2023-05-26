@@ -15,7 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import BottomSheet from "./BottomSheet";
 import { NewsFeedContext } from "../../utils/AppContext";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const styles = StyleSheet.create({
   newsFeed: {

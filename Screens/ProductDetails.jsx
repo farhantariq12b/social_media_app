@@ -1,42 +1,51 @@
+import React, { useState } from "react";
 import { Image, ScrollView, StyleSheet } from "react-native";
 import { Text, View } from "react-native";
-import CustomButton from "../Components/Button";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 import Footer from "../Components/ProductDetails/Footer";
-import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { TouchableOpacity } from "react-native";
 import { icons } from "../constants/icons";
-import { useState } from "react";
-import { set } from "react-native-reanimated";
 
+// Screen for displaying product details
 const ProductDetails = ({ route }) => {
   const { productDetails } = route.params;
+
+  // State for managing the quantity and price of the product
   const [increaseQuantity, setIncreaseQuantity] = useState(1);
   const { price } = productDetails;
   const [productPrice, setProductPrice] = useState(price);
 
+  // Function to increase the quantity and update the price
   const increase = () => {
     setIncreaseQuantity(increaseQuantity + 1);
     setProductPrice(price * (increaseQuantity + 1));
   };
+
+  // Function to decrease the quantity and update the price
   const decrease = () => {
     if (increaseQuantity > 1) {
       setIncreaseQuantity(increaseQuantity - 1);
       setProductPrice(productPrice - price);
     }
   };
+
   return (
     <>
+      {/* Scrollable container for the product details */}
       <ScrollView style={{ backgroundColor: colors.primary }}>
+        {/* Product image */}
         <Image
           style={styles.productImage}
           source={{ uri: productDetails.productPicture }}
         />
+
         <View style={styles.mainContainer}>
+          {/* Product name */}
           <View style={styles.productNameContainer}>
             <Text style={styles.productName}>{productDetails.name}</Text>
           </View>
+
+          {/* Product description */}
           <View style={styles.productDescriptionContainer}>
             <Text style={styles.description}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
@@ -45,8 +54,11 @@ const ProductDetails = ({ route }) => {
               voluptatum, voluptates,
             </Text>
           </View>
+
+          {/* Quantity and price */}
           <View style={styles.quantityConatiner}>
             <View style={styles.increaseDecreaseQuantity}>
+              {/* Button to increase quantity */}
               <TouchableOpacity style={styles.plusBtn} onPress={increase}>
                 <Image
                   source={icons.plus}
@@ -54,7 +66,11 @@ const ProductDetails = ({ route }) => {
                   style={styles.plusBtnImage}
                 />
               </TouchableOpacity>
+
+              {/* Display the quantity */}
               <Text style={styles.quantity}>{increaseQuantity}</Text>
+
+              {/* Button to decrease quantity */}
               <TouchableOpacity style={styles.minusBtn} onPress={decrease}>
                 <Image
                   source={icons.minus}
@@ -63,12 +79,16 @@ const ProductDetails = ({ route }) => {
                 />
               </TouchableOpacity>
             </View>
+
+            {/* Display the product price */}
             <View>
               <Text style={styles.price}>$ {productPrice}</Text>
             </View>
           </View>
+
           <Text>Standard Shipping</Text>
 
+          {/* Footer component */}
           <Footer />
         </View>
       </ScrollView>
@@ -76,6 +96,7 @@ const ProductDetails = ({ route }) => {
   );
 };
 
+// Styles for the ProductDetails component
 const styles = StyleSheet.create({
   mainContainer: {
     marginTop: -45,
@@ -108,7 +129,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: `${colors.primary}`,
   },
-
   productImage: {
     width: "100%",
     height: 400,

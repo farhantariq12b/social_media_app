@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import PostsList from "./PostLists";
 import ProductsList from "./ProductsLists";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 import CustomButton from "../Button";
 import { faAddressCard } from "@fortawesome/free-regular-svg-icons";
 import { faShop } from "@fortawesome/free-solid-svg-icons";

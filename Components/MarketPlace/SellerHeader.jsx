@@ -2,7 +2,7 @@ import { StyleSheet, Text } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Image } from "react-native";
 import { View } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 import { useNavigation } from "@react-navigation/native";
 
 const SellerHeader = ({ storePicture, storeName, name, data }) => {

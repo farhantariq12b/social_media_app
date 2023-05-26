@@ -1,17 +1,23 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import StoreHeader from "../Components/Store/StoreHeader";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 import CustomButton from "../Components/Button";
 import { faJetFighter, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import ProductList from "../Components/MarketPlace/ProductList";
 
+// displaying the user's store screen
 const StoreScreen = ({ route }) => {
+  // Extract the profileData from the route parameters
   const { profileData } = route.params;
 
+  // Header component for the store screen
   const HeaderComponent = () => {
     return (
       <>
+        {/* Store header component */}
         <StoreHeader storeData={profileData} />
+
+        {/* Shipping Worldwide section */}
         <View style={styles.shipping}>
           <CustomButton
             icon={faJetFighter}
@@ -22,6 +28,7 @@ const StoreScreen = ({ route }) => {
           <Text style={styles.shippingText}>Shipping Worldwide</Text>
         </View>
 
+        {/* Store location section */}
         <View style={styles.shipping}>
           <CustomButton
             icon={faLocationPin}
@@ -33,12 +40,14 @@ const StoreScreen = ({ route }) => {
       </>
     );
   };
+
   return (
     <View style={styles.storeScreen}>
+      {/* FlatList component for rendering the product list */}
       <FlatList
-        ListHeaderComponent={HeaderComponent}
-        data={profileData.productList}
-        numColumns={2}
+        ListHeaderComponent={HeaderComponent} // Renders the header component
+        data={profileData.productList} // Data for the product list
+        numColumns={2} // Number of columns in the product grid
         renderItem={({ item }) => (
           <ProductList
             productName={item.name}
@@ -48,13 +57,14 @@ const StoreScreen = ({ route }) => {
             productDetails={item}
           />
         )}
-        ListFooterComponent={<View style={{ height: 90 }}></View>}
-        showsVerticalScrollIndicator={false}
+        ListFooterComponent={<View style={{ height: 90 }}></View>} // Footer component
+        showsVerticalScrollIndicator={false} // Hides the vertical scroll indicator
       />
     </View>
   );
 };
 
+// Styles for the StoreScreen component
 const styles = StyleSheet.create({
   storeScreen: {
     flex: 1,

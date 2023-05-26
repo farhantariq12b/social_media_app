@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
 import NewsFeedCard from "../Components/NewsFeed/NewsFeedCard";
 import { sharedData } from "../utils/SharedData";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 import { NewsFeedContext } from "../utils/AppContext";
 import Header from "../Components/NewsFeed/Header";
 
+// Component for the News Feed screen
 const NewsFeedScreen = () => {
+  // State for managing the news feed data
   const [newsFeed, setNewsFeed] = useState(sharedData);
+
   return (
     <NewsFeedContext.Provider value={{ newsFeed, setNewsFeed }}>
+      {/* Header component */}
       <Header />
+
+      {/* FlatList component to render the news feed */}
       <FlatList
         style={styles.flatlist}
         data={newsFeed}
@@ -18,6 +24,7 @@ const NewsFeedScreen = () => {
         renderItem={({ item }) => <NewsFeedCard data={item} />}
         onEndReachedThreshold={0.3}
         onEndReached={() => {
+          // Adding a new item to the news feed on reaching the end
           setNewsFeed((prevData) => {
             return [
               ...prevData,
@@ -36,6 +43,7 @@ const NewsFeedScreen = () => {
             ];
           });
         }}
+        // Component to show a loading indicator at the end of the news feed
         ListFooterComponent={
           <ActivityIndicator
             style={styles.indicator}
@@ -47,6 +55,8 @@ const NewsFeedScreen = () => {
     </NewsFeedContext.Provider>
   );
 };
+
+// Styles for the NewsFeedScreen component
 const styles = StyleSheet.create({
   flatlist: {
     paddingBottom: 20,

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, FlatList, Image, StyleSheet } from "react-native";
-import { colors } from "../../utils/colors";
+import React from "react";
+import { View, FlatList, StyleSheet } from "react-native";
 import SellerHeader from "./SellerHeader";
 import ProductList from "./ProductList";
 

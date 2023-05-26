@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const GeneraicCount = ({ count, name, addLine }) => {
   return (

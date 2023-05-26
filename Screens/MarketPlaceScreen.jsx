@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, FlatList } from "react-native";
 import MarketPlace from "../Components/MarketPlace/MarketPlace";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 import { UsersData } from "../utils/UsersData";
 import Header from "../Components/NewsFeed/Header";
 

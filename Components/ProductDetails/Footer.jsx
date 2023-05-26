@@ -11,7 +11,7 @@ import {
 import { icons } from "../../constants/icons";
 import { SIZES } from "../../constants/sizes";
 import { StyleSheet } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const Footer = ({}) => {
   const [isLiked, setIsLiked] = useState(false);

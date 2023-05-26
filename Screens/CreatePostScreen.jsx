@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import AddPost from "../Components/AddPost/AddPost";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 import { StyleSheet } from "react-native";
 import Header from "../Components/NewsFeed/Header";
 

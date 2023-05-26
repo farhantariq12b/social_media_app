@@ -1,6 +1,6 @@
 import { Image, Touchable, TouchableOpacity } from "react-native";
 import { StyleSheet, Text, View } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 import { useNavigation } from "@react-navigation/native";
 
 const ProductsList = ({ products }) => {

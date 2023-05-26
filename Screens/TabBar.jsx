@@ -20,7 +20,7 @@ import { StyleSheet, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import StoreScreen from "./StoreScreen";
 import ProductDetails from "./ProductDetails";
-import { colors } from "../utils/colors";
+import { colors } from "../constants/colors";
 
 // Creating a bottom tab navigator using createBottomTabNavigator from @react-navigation/bottom-tabs
 const Tab = createBottomTabNavigator();

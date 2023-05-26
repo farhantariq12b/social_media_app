@@ -1,5 +1,5 @@
 import { Image, View, Text, TouchableOpacity, Pressable } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 import { faHeart as faHeartFiled } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";

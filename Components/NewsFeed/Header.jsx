@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 import { icons } from "../../constants/icons";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const Header = () => {
   return (

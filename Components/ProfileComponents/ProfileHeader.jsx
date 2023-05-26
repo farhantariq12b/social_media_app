@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const ProfileHeader = ({ profile }) => {
   return (

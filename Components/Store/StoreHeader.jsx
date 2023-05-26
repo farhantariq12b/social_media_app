@@ -1,7 +1,7 @@
 import { Image, StyleSheet, View } from "react-native";
 import GeneraicCount from "../ProfileComponents/GenericFollowers";
 import { Text } from "react-native";
-import { colors } from "../../utils/colors";
+import { colors } from "../../constants/colors";
 
 const StoreHeader = ({ storeData }) => {
   return (

@@ -12,8 +12,7 @@ import {
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { useForm, Controller } from "react-hook-form";
-import { colors } from "../../utils/colors";
-import { UsersData } from "../../utils/UsersData";
+import { colors } from "../../constants/colors";
 import { UserContext } from "../../utils/AppContext";
 import { SIZES } from "../../constants/sizes";
 
@@ -48,6 +47,7 @@ const AddPost = () => {
       setImage(pickerResult.assets[0].uri);
     }
 
+    //  Adding the image in the state
     if (!pickerResult.cancel) {
       setImage(pickerResult.assets[0].uri);
 
