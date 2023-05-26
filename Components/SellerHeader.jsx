@@ -9,7 +9,17 @@ const SellerHeader = ({ storePicture, storeName, name, data }) => {
   const navigation = useNavigation();
   const navigationTo = (id) => {
     const clickedProfile = [data].find((item) => item.id === id);
-    navigation.navigate("Profile", {
+    navigation.navigate("UserDetails", {
+      screen: "User",
+      params: {
+        profileData: clickedProfile,
+      },
+    });
+  };
+
+  const navigateTo = (id) => {
+    const clickedProfile = [data].find((item) => item.id === id);
+    navigation.navigate("Store", {
       profileData: clickedProfile,
     });
   };
@@ -25,7 +35,7 @@ const SellerHeader = ({ storePicture, storeName, name, data }) => {
           <Text style={styles.username}>{name}</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate("Store")}>
+      <TouchableOpacity onPress={() => navigateTo(data.id)}>
         <Text style={styles.viewStore}>View Store</Text>
       </TouchableOpacity>
     </View>
@@ -58,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     marginRight: 10,
-    color: `${colors.darkBlue}`,
+    color: `${colors.orange}`,
   },
 });
 export default SellerHeader;

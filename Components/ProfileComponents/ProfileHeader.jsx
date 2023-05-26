@@ -10,7 +10,7 @@ const ProfileHeader = ({ profile }) => {
           style={styles.profileImage}
           source={{ uri: profile.profileImage }}
         />
-        <Text>{profile.name}</Text>
+        <Text style={styles.username}>{profile.name}</Text>
       </View>
       <View>
         <Text style={styles.bio}>{profile.bio}</Text>
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   username: {
     fontSize: 20,
     fontWeight: "bold",
+    color: colors.secondary,
   },
   profileImage: {
     width: 100,

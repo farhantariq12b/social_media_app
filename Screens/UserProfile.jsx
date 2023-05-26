@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -7,28 +7,22 @@ import {
   ToastAndroid,
 } from "react-native";
 import ProfileHeader from "../Components/ProfileComponents/ProfileHeader";
+import { UsersData } from "../utils/UsersData";
 import GeneraicCount from "../Components/ProfileComponents/GenericFollowers";
 import { colors } from "../utils/colors";
 import ProfileTabs from "../Components/ProfileComponents/ProfileTabs";
 import { ScrollView } from "react-native-gesture-handler";
-import { UserContext } from "../utils/AppContext";
-import { useNavigation } from "@react-navigation/native";
 
-const ProfileScreen = ({ route }) => {
+const UserProfile = ({ route }) => {
   const showToast = () => {
     ToastAndroid.show("Coming Soon!", ToastAndroid.SHORT);
   };
-  const { usersData } = useContext(UserContext);
   let profileData;
   if (route.params) {
     profileData = route.params.profileData;
   } else {
-    profileData = usersData[0];
+    profileData = UsersData[0];
   }
-  const navigation = useNavigation();
-  const navigateToStore = () => {
-    navigation.navigate("YourStore", { profileData: profileData });
-  };
   return (
     <>
       <ScrollView style={{ backgroundColor: colors.primary }}>
@@ -47,17 +41,9 @@ const ProfileScreen = ({ route }) => {
             />
             <GeneraicCount count={profileData.views} name="Views" />
           </View>
-          <View style={styles.profileAndProductButton}>
-            <TouchableOpacity style={styles.editButton} onPress={showToast}>
-              <Text style={styles.button}>Edit Profile</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.productsBtn}
-              onPress={navigateToStore}
-            >
-              <Text style={styles.proBtn}>Products</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={styles.editButton} onPress={showToast}>
+            <Text style={styles.button}>Edit Profile</Text>
+          </TouchableOpacity>
         </View>
         <ProfileTabs data={profileData} />
       </ScrollView>
@@ -91,25 +77,6 @@ const styles = StyleSheet.create({
   button: {
     color: `${colors.darkGrey}`,
   },
-  profileAndProductButton: {
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    gap: 30,
-  },
-  productsBtn: {
-    backgroundColor: `${colors.primary}`,
-    padding: 10,
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: `${colors.orange}`,
-    width: "30%",
-    alignItems: "center",
-    marginTop: 20,
-  },
-  proBtn: {
-    color: `${colors.orange}`,
-  },
 });
 
-export default ProfileScreen;
+export default UserProfile;

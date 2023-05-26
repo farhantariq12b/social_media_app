@@ -1,30 +1,36 @@
-import { Image, StyleSheet, Text } from "react-native";
-import { FlatList, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { colors } from "../../utils/colors";
 
 const PostsList = ({ posts }) => {
   return (
-    <FlatList
-      data={posts}
-      keyExtractor={(item) => item.id}
-      numColumns={2}
-      renderItem={({ item }) => (
-        <View style={styles.itemContainer}>
-          <Image style={styles.images} source={{ uri: item.postImage }} />
-        </View>
-      )}
-      ListFooterComponent={<View style={{ height: 90 }} />}
-    />
+    <>
+      <View style={styles.container}>
+        {posts.map((item) => (
+          <View key={item.id} style={styles.itemContainer}>
+            <Image style={styles.images} source={{ uri: item.postImage }} />
+          </View>
+        ))}
+      </View>
+      <View style={{ height: 90, backgroundColor: colors.primary }} />
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  itemContainer: {
+  container: {
     flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: 10,
+    justifyContent: "flex-start",
+    backgroundColor: colors.primary,
+  },
+  itemContainer: {
     padding: 5,
   },
   images: {
-    height: 150,
-    width: 150,
+    height: 100,
+    width: 100,
     borderRadius: 8,
   },
 });

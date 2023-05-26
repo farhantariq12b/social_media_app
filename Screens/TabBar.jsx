@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -6,8 +6,12 @@ import {
   faStore,
   faUser,
   faHouse,
+  faChevronCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from "@react-navigation/native";
 import NewsFeedScreen from "./NewsFeedScreen";
 import CreatePostScreen from "./CreatePostScreen";
 import MarketplaceScreen from "./MarketPlaceScreen";
@@ -15,9 +19,12 @@ import ProfileScreen from "./ProfileScreen";
 import { StyleSheet, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import StoreScreen from "./StoreScreen";
+import ProductDetails from "./ProductDetails";
+import { colors } from "../utils/colors";
 
 const Tab = createBottomTabNavigator();
 const MarketPlaceStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
 
 const styles = StyleSheet.create({
   tabNavigator: {
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
   activeTabIcon: {
     borderRadius: 50,
     padding: 10,
-    backgroundColor: "#000000",
+    backgroundColor: `${colors.orange}`,
   },
 });
 
@@ -46,6 +53,9 @@ const BottomTabs = () => {
           headerShown: false,
           tabBarStyle: styles.tabNavigator,
           tabBarShowLabel: false,
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
           tabBarIcon: ({ color, focused }) => {
             let icon;
 
@@ -68,28 +78,111 @@ const BottomTabs = () => {
         })}
       >
         <Tab.Screen name="NewsFeed" component={NewsFeedScreen} />
-        <Tab.Screen name="CreatePost" component={CreatePostScreen} />
+        <Tab.Screen
+          options={{ headerShown: false }}
+          name="CreatePost"
+          component={CreatePostScreen}
+        />
         <Tab.Screen name="Marketplace" component={MarketPlaceStackScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Profile" component={ProfileStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-function MarketPlaceStackScreen() {
+function MarketPlaceStackScreen({ navigation, route }) {
+  const tabHiddenRoutes = ["ProductDetails", "Store", "UserDetails"];
+  useLayoutEffect(() => {
+    if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route))) {
+      navigation.setOptions({ tabBarStyle: { display: "none" } });
+    } else {
+      navigation.setOptions({
+        tabBarStyle: styles.tabNavigator,
+      });
+    }
+  }, [navigation, route]);
+
   return (
     <MarketPlaceStack.Navigator
       screenOptions={() => ({
         headerShown: false,
+        headerShadowVisible: false,
+        headerBackImage: () => (
+          <FontAwesomeIcon
+            icon={faChevronCircleLeft}
+            color={colors.secondary}
+            size={25}
+          />
+        ),
+        headerStyle: {
+          backgroundColor: colors.primary,
+        },
+        headerTitleStyle: {
+          color: colors.secondary,
+        },
       })}
     >
-      <MarketPlaceStack.Screen
-        name="Marketplace"
-        component={MarketplaceScreen}
-      />
-      <MarketPlaceStack.Screen name="Profile" component={ProfileScreen} />
+      <MarketPlaceStack.Screen name="Shop" component={MarketplaceScreen} />
       <MarketPlaceStack.Screen name="Store" component={StoreScreen} />
+      <MarketPlaceStack.Screen
+        name="UserDetails"
+        component={ProfileScreenStackScreen}
+      />
+      <MarketPlaceStack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
+      />
     </MarketPlaceStack.Navigator>
+  );
+}
+
+function ProfileStackScreen({ navigation, route }) {
+  const tabHiddenRoutes = ["Product, YourStore"];
+  useLayoutEffect(() => {
+    if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route))) {
+      navigation.setOptions({ tabBarStyle: { display: "none" } });
+    } else {
+      navigation.setOptions({
+        tabBarStyle: styles.tabNavigator,
+      });
+    }
+  }, [navigation, route]);
+
+  return <ProfileScreenStackScreen />;
+}
+
+export function ProfileScreenStackScreen() {
+  return (
+    <ProfileStack.Navigator
+      screenOptions={() => ({
+        headerShadowVisible: false,
+        headerBackImage: () => (
+          <FontAwesomeIcon
+            icon={faChevronCircleLeft}
+            color={colors.secondary}
+            size={25}
+          />
+        ),
+        headerStyle: {
+          backgroundColor: colors.primary,
+        },
+        headerTitleStyle: {
+          color: colors.secondary,
+        },
+      })}
+    >
+      <ProfileStack.Screen
+        name="User"
+        component={ProfileScreen}
+        options={() => ({ headerShown: false })}
+      />
+      <ProfileStack.Screen name="Product" component={ProductDetails} />
+      <ProfileStack.Screen
+        name="YourStore"
+        component={StoreScreen}
+        options={() => ({ headerShown: false })}
+      />
+    </ProfileStack.Navigator>
   );
 }
 

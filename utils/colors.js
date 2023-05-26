@@ -1,5 +1,5 @@
 export const colors = {
-  primary: "#FFFFFF",
+  primary: "#ffffff",
   secondary: "#151515",
   iconColor: "#FFFFFF",
   textColor: "#FFFFFF",
@@ -10,4 +10,6 @@ export const colors = {
   darkGrey: "#616161",
   darkGrey2: "#cccccc",
   darkBlue: "#20b2c5",
+  darkPurple: "#c790b8",
+  orange: "#F37453",
 };

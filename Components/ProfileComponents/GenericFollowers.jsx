@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   count: {
     fontSize: 16,
     fontWeight: "bold",
+    color: `${colors.secondary}`,
   },
   name: {
     fontSize: 12,

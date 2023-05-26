@@ -7,26 +7,6 @@ import ProductList from "./ProductList";
 const MarketPlace = ({ data }) => {
   return (
     <View style={styles.container}>
-      {/* <View style={styles.sectionButtonContainer}>
-        <Pressable
-          style={[
-            styles.sectionButton,
-            activeSection === "buy" && styles.activeSectionButton,
-          ]}
-          onPress={() => handleSectionChange("buy")}
-        >
-          <Text style={styles.sectionTitle}>Buy</Text>
-        </Pressable>
-        <Pressable
-          style={[
-            styles.sectionButton,
-            activeSection === "sell" && styles.activeSectionButton,
-          ]}
-          onPress={() => handleSectionChange("sell")}
-        >
-          <Text style={styles.sectionTitle}>Sell</Text>
-        </Pressable>
-      </View> */}
       <SellerHeader
         storePicture={data.storePicture}
         storeName={data.storeName}
@@ -41,6 +21,8 @@ const MarketPlace = ({ data }) => {
               productPicture={item.productPicture}
               price={item.price}
               productName={item.name}
+              data={data}
+              productDetails={item}
             />
           )}
           horizontal

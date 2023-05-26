@@ -16,7 +16,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -24,7 +24,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -32,7 +32,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -40,7 +40,7 @@ export const UsersData = [
       {
         id: 4,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -48,7 +48,7 @@ export const UsersData = [
       {
         id: 5,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -56,7 +56,7 @@ export const UsersData = [
       {
         id: 6,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -117,7 +117,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -125,7 +125,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -133,7 +133,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -194,7 +194,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -202,7 +202,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -210,7 +210,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -270,7 +270,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -278,7 +278,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -286,7 +286,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -346,7 +346,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -354,7 +354,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -362,7 +362,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
@@ -423,7 +423,7 @@ export const UsersData = [
       {
         id: 1,
         name: "Colorfull Strip",
-        price: "$20",
+        price: 20,
         productPicture:
           "https://i.ebayimg.com/images/g/hWAAAOSwaeZkabo0/s-l500.jpg",
       },
@@ -431,7 +431,7 @@ export const UsersData = [
       {
         id: 2,
         name: "Shoes",
-        price: "$40",
+        price: 40,
         productPicture:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       },
@@ -439,7 +439,7 @@ export const UsersData = [
       {
         id: 3,
         name: "Lilac Bloosam",
-        price: "$10",
+        price: 10,
         productPicture:
           "https://i.ebayimg.com/images/g/DAkAAOSwMplh5m-A/s-l500.png",
       },
